@@ -11,4 +11,6 @@
 
 Table of contents generator for Markdown documents.
 
+[Link to WebPage](https://rafanthx13.github.io/toc-generator/)
+
 <h2 align="center">Developed by &#128640; <a href="https://rafanthx13.github.io/">Rafael Morais de Assis</a></h2>

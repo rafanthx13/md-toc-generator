@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- https://purecss.io/grids/ -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TOC Generator">
+  <meta name="keywords" content="Markdown, TOC, generator, table of contents">
+  <meta name="author" content="Rafael Morais de Assis">
+  <title>TOC Generator</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+
+  <style type="text/css">
+
+    body {
+      margin: 10px;
+    }
+
+  </style>
+
+  <script>
+
+  	var symbols = {1: '+', 2: '-', 3: '*', 4: '+', 5: '-', 6: '*'};
+
+    function generate_toc(){
+    	let list = document.getElementById("md-text").value;
+    	list = list.split("\n").filter( el => el != "" ).filter(el => el[0] == '#');
+
+    	let response = null;
+    	response = list.map(el => {
+    		let count_hashtags = count_hashtag(el);
+    		let symbol = symbols[count_hashtags]
+    		if(count_hashtags == 0){
+    			console.log('error')
+    		}
+    		let spaces = count_hashtags - 1;
+    		let el_clean = el.replace(/#/g, '').trim()
+    		console.log('slece', el.slice(spaces + 1))
+    		return generate_spaces(spaces) + symbol + ' ' + '[' + el_clean + `](#${el_clean.trim()})`
+
+    	})
+    	console.log(list)
+    	console.log(response)
+    	/*
+"# h1"
+1: "## h2"
+2: "### h3.1"
+3: "### h2.2"
+    	*/
+    	let saida = '';
+    	for( let r of response){
+    		saida += r + '\n';
+    	}
+    	document.getElementById("md-output").value = saida;
+
+    }
+
+    function generate_spaces(num){
+    	let str = '';
+    	for(let i = 0; i < num; i++){
+    		str += '  '
+    	}
+    	return str
+    }
+
+    function count_hashtag(el){
+    	console.log('el', el)
+    	let count = 0;
+    	for (let i = 0; i < el.length; i = i + 1) {
+    		if(el[i] == '#'){
+    				count = count + 1;
+    		}else{
+    			break
+    		}
+    	}
+    	return count;
+    }
+    
+  </script>
+
+</head>
+<body>
+
+  <h1>TOC Markdown Generator</h1>
+  <p>Paste Markdown code here</p>
+  
+  <div class="pure-g">
+    <div class="pure-u-12-24">
+      <form class="pure-form" onsubmit="return false">
+          <fieldset class="pure-group">
+              <textarea id="md-text" class="pure-input-1-2" placeholder="Textareas work too" style="width: 100%; height: 400px; font-family: 'Ubuntu Mono', monospace;">
+
+                
+              </textarea>
+          </fieldset>
+          <button type="submit" class="pure-button pure-input-1-5 pure-button-primary" onclick="generate_toc()">Generate TOC</button>
+      </form>
+      
+    </div>
+    <div class="pure-u-12-24">
+      <form class="pure-form">
+          <fieldset class="pure-group">
+      <textarea readonly id="md-output" class="pure-input-1-2 my-text-area" placeholder="Textareas work too" style="width: 100%; height: 400px; font-family: 'Ubuntu Mono', monospace;">
+        
+      </textarea>
+      </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <hr>
+
+  <span>Developed by &#128640; <a href="https://rafanthx13.github.io/">Rafael Morais de Assis</a></span>
+
+  <script>
+		// Set Default Text
+    var defaultText = `
+      Put Here your MarkDown Text to generate TOC
+
+      # h1
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere laoreet condimentum.
+
+      ## h2
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere laoreet condimentum.
+
+      ### h3.1
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere laoreet condimentum.
+
+      ### h2.2
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere laoreet condimentum.`
+    ;
+    defaultText = defaultText.replace( /\\t/g,'').replace(/  /g, '').trim(); // só faz replace universal com regex
+    document.getElementById("md-text").value = defaultText;
+
+  </script>
+  
+</body>
+</html>

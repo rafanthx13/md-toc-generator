@@ -49,7 +49,7 @@ function generate_toc() {
      }
      let spaces = count_hashtags - 1;
      let el_clean = el.replace(/#/g, '').trim()
-     let el_clean_link = el_clean.replace(/\s/g,'-').replace(/\./g,'')
+     let el_clean_link = el_clean.replace(/\s/g,'-').replace(/\./g,'').toLowerCase()
      return generate_spaces(spaces) + symbol + ' ' + '[' + el_clean + `](#${el_clean_link})`
    })
 

@@ -48,8 +48,9 @@ function generate_toc() {
        console.log('error')
      }
      let spaces = count_hashtags - 1;
-     let el_clean = el.replace(/#/g, '').trim().replace(/\s/g,'-').replace(/\./g,'')
-     return generate_spaces(spaces) + symbol + ' ' + '[' + el_clean + `](#${el_clean})`
+     let el_clean = el.replace(/#/g, '').trim()
+     let el_clean_link = el_clean.replace(/\s/g,'-').replace(/\./g,'')
+     return generate_spaces(spaces) + symbol + ' ' + '[' + el_clean + `](#${el_clean_link})`
    })
 
    let saida = '';

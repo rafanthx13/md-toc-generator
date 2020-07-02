@@ -13,4 +13,10 @@ Table of contents generator for Markdown documents.
 
 [Link to WebPage](https://rafanthx13.github.io/toc-generator/)
 
+Baseado no Link [https://ecotrust-canada.github.io/markdown-toc/](https://ecotrust-canada.github.io/markdown-toc/)
+
+**Novas Features:**
++ Aceitar Unicode e caracteres latinos
++ Opção de adicionar espaços entre as linhas
+
 <h2 align="center">Developed by &#128640; <a href="https://rafanthx13.github.io/">Rafael Morais de Assis</a></h2>

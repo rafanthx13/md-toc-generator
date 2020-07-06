@@ -1,22 +1,21 @@
 <div align="center">
-<h1>TOC Generator</h1>
+<h1>MarkDown TOC Generator</h1>
 
-<p align="center">
-    <img src="https://img.shields.io/badge/app-web--page-success" alt="App WebPage">
+<p>
+<img src="https://img.shields.io/badge/app-web--page-success" alt="App WebPage">
 </p>
+
+Table of contents (TOC/Index) generator for Markdown documents.
 
 </div>
 
-## Goal
+**Link**: [Link to WebPage](https://rafanthx13.github.io/toc-generator/)
 
-Table of contents generator for Markdown documents.
+**Reference**: Llayout based on [https://ecotrust-canada.github.io/markdown-toc/](https://ecotrust-canada.github.io/markdown-toc/)
 
-[Link to WebPage](https://rafanthx13.github.io/toc-generator/)
+**Features**
 
-Baseado no Link [https://ecotrust-canada.github.io/markdown-toc/](https://ecotrust-canada.github.io/markdown-toc/)
-
-**Novas Features:**
-+ Aceitar Unicode e caracteres latinos
-+ Opção de adicionar espaços entre as linhas
++ Accept Unicode and Latin characters
++ Option to add spaces between lines
 
 <h2 align="center">Developed by &#128640; <a href="https://rafanthx13.github.io/">Rafael Morais de Assis</a></h2>

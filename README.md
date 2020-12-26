@@ -9,7 +9,7 @@ Table of contents (TOC/Index) generator for Markdown documents.
 
 </div>
 
-**Link**: [Link to WebPage](https://rafanthx13.github.io/toc-generator/)
+[Link to WebPage](https://rafanthx13.github.io/md-toc-generator/)
 
 **Reference**: Llayout based on [https://ecotrust-canada.github.io/markdown-toc/](https://ecotrust-canada.github.io/markdown-toc/)
 
